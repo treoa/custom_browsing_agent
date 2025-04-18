@@ -105,7 +105,7 @@ async def run_browser_task(
             browser=browser,
         )
         
-        result = await agent.run(max_steps=80)
+        result = await agent.run(max_steps=88)
         return result
     except Exception as e:
         return f"Error: {str(e)}"

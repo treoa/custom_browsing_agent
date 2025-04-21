@@ -1,113 +1,132 @@
-# Advanced Autonomous Research Agent
+# Browsing Agent
 
-An intelligent multi-agent research system for conducting deep, methodical web investigations.
+An advanced autonomous research agent with browser automation capabilities for conducting web research tasks.
 
-## Overview
+## Features
 
-This project implements the Advanced Autonomous Research Agent framework, a sophisticated multi-agent architecture designed to overcome the limitations of traditional browser-use implementations. The system focuses on conducting thorough, high-quality research across multiple domains while avoiding the common problem of premature task completion.
+- Autonomous web browsing and research capabilities
+- Integration with multiple LLM providers (OpenAI, Google, Anthropic, OpenRouter)
+- Browser automation for gathering information from websites
+- Progress tracking and research reporting
+- User-friendly interface for research queries
 
-Key features:
+## Setup Instructions
 
-- **Multi-Agent Architecture**: Specialized agents for planning, execution, analysis, critique, and synthesis
-- **Advanced Memory Systems**: Short-term, working, long-term, and episodic memory for comprehensive context
-- **Sophisticated Planning**: Strategic and tactical planning for thorough research
-- **Quality Evaluation**: Rigorous criteria for research completeness and quality
-- **Progressive Deepening**: Methodology to ensure depth rather than shallow exploration
+### Prerequisites
 
-## Components
+- Python 3.10 or higher
+- Chrome browser installed on your system
+- API keys for at least one LLM provider
 
-The system consists of these main components:
+### Installation
 
-1. **Agents**:
-   - Executive Agent: Coordinates the overall research process
-   - Research Agent: Gathers information from web sources
-   - Analysis Agent: Processes and analyzes gathered information
-   - Critique Agent: Evaluates quality and completeness
-   - Synthesis Agent: Compiles findings into coherent outputs
-
-2. **Memory System**:
-   - Short-Term Memory: Maintains immediate context
-   - Working Memory: Processes current information
-   - Long-Term Memory: Stores persistent knowledge
-   - Episodic Memory: Records research actions and outcomes
-
-3. **Planning Framework**:
-   - Strategic Planner: High-level research goals and strategies
-   - Tactical Planner: Concrete, actionable steps
-
-## Installation
-
-1. Clone the repository:
-   ```
+1. Clone this repository:
+   ```bash
    git clone https://github.com/yourusername/browsing_agent.git
    cd browsing_agent
    ```
 
-2. Install dependencies:
-   ```
+2. Install required dependencies:
+   ```bash
    pip install -r requirements.txt
    ```
 
-3. Set up environment variables:
-   Create a `.env` file with the following variables:
+3. Create a `.env` file in the project root with your API keys:
    ```
+   # OpenAI API (for GPT models)
    OPENAI_API_KEY=your_openai_api_key
-   OPENROUTER_API_KEY=your_openrouter_api_key
+
+   # Google API (for Gemini models)
    GEMINI_API_KEY=your_gemini_api_key
+
+   # Anthropic API (for Claude models)
+   ANTHROPIC_API_KEY=your_anthropic_api_key
+
+   # OpenRouter API (for access to multiple models)
+   OPENROUTER_API_KEY=your_openrouter_api_key
+
+   # Fireworks API (for alternative models)
+   FIREWORKS_API_KEY=your_fireworks_api_key
    ```
+
+   You need to include at least one API key for the agent to function.
+
+### API Key Setup Guide
+
+#### OpenAI API Key
+1. Go to [OpenAI's platform](https://platform.openai.com/account/api-keys)
+2. Create an account or log in
+3. Create a new API key
+4. Add to your `.env` file as `OPENAI_API_KEY=your_key_here`
+
+#### Google (Gemini) API Key
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create or log into your Google account
+3. Create an API key
+4. Add to your `.env` file as `GEMINI_API_KEY=your_key_here`
+
+#### Anthropic API Key
+1. Go to [Anthropic's console](https://console.anthropic.com/)
+2. Create an account or log in
+3. Create a new API key
+4. Add to your `.env` file as `ANTHROPIC_API_KEY=your_key_here`
+
+#### OpenRouter API Key
+1. Visit [OpenRouter](https://openrouter.ai/)
+2. Sign up or log in
+3. Create a new API key
+4. Add to your `.env` file as `OPENROUTER_API_KEY=your_key_here`
 
 ## Usage
 
-### Using the UI
+### Quick Start Example
 
-Run the application:
-```
-python main.py --ui
-```
+Run the included example script to see the agent in action:
 
-This will launch a Gradio interface where you can:
-- Enter a research query
-- Select an LLM model
-- Configure research parameters
-- View research results
-
-### Command Line Usage
-
-Run research from the command line:
-```
-python main.py --query "Your research query" --model "gemini-2.0-pro" --max-steps 50
+```bash
+python example.py
 ```
 
-Parameters:
-- `--query`: The research query to investigate
-- `--model`: LLM model to use (default: "gemini-2.0-pro")
-- `--max-steps`: Maximum number of research steps (default: 50)
-- `--storage-path`: Path for storing research data (default: "./research_data")
+This will run a sample research task about quantum computing using your configured API keys.
 
-## Example Queries
+### Using the Web Interface
 
-Try these example research queries:
+Start the web UI for more interactive research:
 
-- "What are the latest advancements in quantum computing?"
-- "Compare renewable energy adoption rates across different countries"
-- "How has artificial intelligence impacted healthcare diagnostics?"
-- "What are the most effective strategies for mitigating climate change?"
+```bash
+python main.py
+```
 
-## Implementation Roadmap
+This opens a Gradio interface where you can:
+1. Select language models for research
+2. Enter a research query
+3. Set the maximum number of research steps
+4. Start the research process and view results
 
-This project follows an implementation roadmap with five phases:
+## Troubleshooting
 
-1. **Foundation Development** (Current): Core architecture, memory systems, agent framework
-2. **Component Enhancement**: Specialized agent functionalities, advanced planning
-3. **Integration and Optimization**: Cross-component communication, performance tuning
-4. **Testing and Refinement**: Scenario testing, comparison evaluations
-5. **Deployment and Scaling**: Production deployment, monitoring, continuous improvement
+### Common Issues
+
+- **No API keys detected**: Ensure you've added at least one valid API key to your `.env` file
+- **Chrome not found**: Make sure Chrome is installed on your system
+- **Import errors**: Verify all dependencies are installed using `pip install -r requirements.txt`
+
+### Browser Issues
+
+If Chrome fails to start automatically, you can:
+1. Start Chrome manually with remote debugging enabled:
+   ```bash
+   chrome --remote-debugging-port=9222
+   ```
+2. Run the agent with the `--use-existing-browser` flag:
+   ```bash
+   python main.py --use-existing-browser
+   ```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-[MIT License](LICENSE)
-
-## Acknowledgments
-
-- This project builds on the browser-use library for web interaction capabilities
-- Inspired by successful multi-agent systems like Manus
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -1,2 +1,9 @@
 .env
 .gradio/
+.DS_Store
+.cursor/
+
+__pycache__/
+research_data/
+
+research_agent.log

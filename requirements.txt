@@ -1,46 +1,7 @@
-# Core dependencies
-httpx>=0.27.2
-pydantic>=2.10.4,<2.11.0
-python-dotenv>=1.0.1
-requests>=2.32.3
-typing-extensions>=4.12.2
-
-# Browser automation
-browser-use==0.1.14  # Using exact version for compatibility
-playwright>=1.51.0   # Required by browser-use
-
-# LangChain and language models
-langchain-core==0.3.49
-langchain>=0.3.21
-langchain-openai==0.3.11     # OpenAI support
-langchain-anthropic==0.3.3   # Anthropic Claude support
-langchain-google-genai==2.1.2  # Google Gemini support
-langchain-fireworks>=0.2.6   # Fireworks AI support
-
-# UI and visualization
-rich>=13.7.0    # Terminal formatting
-gradio>=4.19.2  # Web UI
-
-# Utilities
-markdownify==1.1.0
-posthog>=3.7.0
-pyperclip>=1.9.0
-psutil>=7.0.0
-faiss-cpu>=1.10.0  # Vector database for memory
-beautifulsoup4>=4.12.2  # HTML parsing
-pillow>=10.0.0  # Image processing
-numpy>=1.26.0
-
-# OS-specific dependencies
-pyobjc>=11.0; platform_system == 'darwin'
-screeninfo>=0.8.1; platform_system != 'darwin'
-
-# Development dependencies (not required for running)
-ruff>=0.11.2
-tokencost>=0.1.16
-build>=1.2.2
-pytest>=8.3.5
-pytest-asyncio>=0.24.0
-ipdb>=0.13.13
-pre-commit>=4.2.0
-codespell>=2.4.1
+browser-use==0.1.40
+pyperclip==1.9.0
+gradio==5.23.1
+json-repair
+langchain-mistralai==0.2.4
+langchain-google-genai==2.0.8
+MainContentExtractor==0.0.4

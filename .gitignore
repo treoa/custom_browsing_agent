@@ -5,5 +5,8 @@
 
 __pycache__/
 research_data/
+data/
+tmp/
+cache/
 
 research_agent.log

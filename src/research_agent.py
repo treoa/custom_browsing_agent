@@ -62,7 +62,7 @@ class ResearchAgent:
         """
         self.basic_llm = basic_llm
         self.advanced_llm = advanced_llm
-        self.browser = browser or self._create_default_browser()
+        self.browser = self._create_custom_browser()
         self.browser_context = browser_context  # Store the browser context
         self.max_steps = max_steps
         self.storage_path = storage_path

@@ -99,7 +99,7 @@ async def run_deep_search(task, max_search_iteration_input, max_query_per_iter_i
                                                       chrome_cdp=chrome_cdp
                                                       )
 
-    return markdown_content, file_path, gr.update(value="Stop", interactive=True), gr.update(interactive=True)
+    return markdown_content, file_path, gr.update(interactive=True)
 
 def initialize_llm(model_name, provider, temperature: float = 0.1, model_type="basic"):
     """
